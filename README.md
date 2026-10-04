@@ -6,8 +6,8 @@ Not part of `psw.vibelandia.sing13` (SING 13). Operator: SynthOBS / FractiAI · 
 | Track | Kaggle | Status |
 |---|---|---|
 | ARC-AGI-2 | [arc-prize-2026-arc-agi-2](https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-2) | Joined · code lane |
+| ARC-AGI-3 | [arc-prize-2026-arc-agi-3](https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3) | Joined · agent lane (`ARC_API_KEY` from three.arcprize.org) |
 | Paper track | [arc-prize-2026-paper-track](https://www.kaggle.com/competitions/arc-prize-2026-paper-track) | Joined · writeup lane |
-| ARC-AGI-3 | [arc-prize-2026-arc-agi-3](https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3) | Not joined (optional later) |
 
 ## Setup
 

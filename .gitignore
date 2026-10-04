@@ -11,9 +11,15 @@
 # Competition data (download locally)
 data/arc-agi-2/*.json
 data/arc-agi-2/*.zip
+data/arc-agi-3/**
 data/**/*.zip
 data/paper-track/*.zip
 !data/README.md
+!data/arc-agi-3/.gitkeep
+
+# Upstream ARC-AGI-3 starter (clone or unzip locally — do not vendor .git packs)
+vendor/
+submissions/
 
 # Python
 __pycache__/
