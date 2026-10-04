@@ -52,9 +52,20 @@ def tile(g: Grid, nx: int, ny: int) -> Grid:
     return out
 
 
+def tile_alt_flip_h(g: Grid, nx: int, ny: int) -> Grid:
+    """Tile with alternating vertical bands: identity, flip_h, identity, …"""
+    rows_out: Grid = []
+    h = len(g)
+    for by in range(ny):
+        block = flip_h(g) if by % 2 else identity(g)
+        for r in range(h):
+            rows_out.append(block[r] * nx)
+    return rows_out
+
+
 def tile_checker(g: Grid, nx: int, ny: int) -> Grid:
-    """3×3-style checker of identity / flip_h / flip_v / rot180 blocks."""
-    blocks = [
+    """Checker of identity / flip_h / flip_v / rot180 blocks."""
+    fns = [
         [identity, flip_h, identity],
         [flip_v, rot180, flip_v],
         [identity, flip_h, identity],
@@ -65,7 +76,7 @@ def tile_checker(g: Grid, nx: int, ny: int) -> Grid:
         for r in range(h):
             row: list[int] = []
             for bx in range(nx):
-                fn = blocks[by % 3][bx % 3]
+                fn = fns[by % 3][bx % 3]
                 row.extend(fn(g)[r])
             rows_out.append(row)
     return rows_out

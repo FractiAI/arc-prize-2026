@@ -19,7 +19,7 @@ def test_tile_checker_fits_known_pattern():
     prog = fit_program(train)
     assert prog is not None
     name, fn = prog
-    assert "tile" in name
+    assert "tile_alt_flip_h" in name or "tile" in name
     assert fn(train[0]["input"]) == train[0]["output"]
 
 

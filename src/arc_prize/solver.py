@@ -17,6 +17,7 @@ from arc_prize.grids import (
     remap_colors,
     same,
     tile,
+    tile_alt_flip_h,
     tile_checker,
 )
 
@@ -49,6 +50,7 @@ def _tile_programs(src: Grid, dst: Grid) -> list[Program]:
         return []
     candidates: list[Program] = [
         (f"tile:{nx}x{ny}", lambda g, nx=nx, ny=ny: tile(g, nx, ny)),
+        (f"tile_alt_flip_h:{nx}x{ny}", lambda g, nx=nx, ny=ny: tile_alt_flip_h(g, nx, ny)),
         (f"tile_checker:{nx}x{ny}", lambda g, nx=nx, ny=ny: tile_checker(g, nx, ny)),
     ]
     return candidates
