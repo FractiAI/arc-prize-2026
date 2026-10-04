@@ -184,6 +184,44 @@ def majority_color(g: Grid) -> int:
     return max(counts, key=counts.get) if counts else 0
 
 
+def fill_bg(g: Grid, color: int, bg: int = 0) -> Grid:
+    return [[color if v == bg else v for v in row] for row in g]
+
+
+def invert_nonzero(g: Grid, bg: int = 0) -> Grid:
+    """Swap the two most common colors when only two non-bg colors exist — else noop-ish."""
+    cols = [v for row in g for v in row if v != bg]
+    if not cols:
+        return copy_grid(g)
+    # map each non-bg to (max+min - v) within present set
+    uniq = sorted(set(cols))
+    if len(uniq) != 2:
+        return copy_grid(g)
+    a, b = uniq
+    return [[(b if v == a else a) if v != bg else bg for v in row] for row in g]
+
+
+def border(g: Grid, color: int) -> Grid:
+    h, w = height(g), width(g)
+    out = copy_grid(g)
+    for c in range(w):
+        out[0][c] = color
+        out[h - 1][c] = color
+    for r in range(h):
+        out[r][0] = color
+        out[r][w - 1] = color
+    return out
+
+
+def half_tile(g: Grid) -> Grid:
+    """2×2 of identity (common 3×3 → 9×9 style when upscale fails)."""
+    return tile(g, 2, 2)
+
+
+def triple_tile(g: Grid) -> Grid:
+    return tile(g, 3, 3)
+
+
 GEOMETRIC: list[tuple[str, Transform]] = [
     ("identity", identity),
     ("rot90", rot90),

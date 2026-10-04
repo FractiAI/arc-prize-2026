@@ -2,6 +2,18 @@
 
 Living status for Player 1. Newest first.
 
+## 2026-10-04 — FractiExplore v1: first AGI-3 level cleared
+
+### Done
+- Fixed explorer crash (`GameAction` id coercion)
+- Ran 8-game batch · **1 / 61 levels** completed (`lp85` click game)
+- Scorecard: https://arcprize.org/scorecards/fd32d060-359b-4716-98b1-615b72905f76
+- AGI-2 training exact-match **31/1000 (3.1%)**; evaluation still 0
+- Raised explorer budget to 400 actions + stronger click bias
+
+### Reality check
+Not winning yet — first nonzero AGI-3 progress vs random (0). Kaggle AGI-2 leaderboard submit still needs Player 1 UI click (API 403).
+
 ## 2026-10-04 — ARC_API_KEY accepted; AGI-3 smoke OK
 
 ### Done

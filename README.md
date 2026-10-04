@@ -21,19 +21,19 @@ Living detail: [`PROGRESS.md`](PROGRESS.md)
 | Kaggle joins (2 · 3 · paper) | **done** |
 | Download / eval / build CLI | **done** |
 | DSL solver v1 (tile · upscale · gravity · crop · recolor) | **done** |
-| Training exact-match | **30 / 1000 (3.0%)** ← was 1.8% |
+| Training exact-match | **31 / 1000 (3.1%)** ← was 1.8% |
 | Evaluation exact-match | **0 / 120 (0%)** |
 | Kaggle Notebook / Kernel | **done** — ran on Kaggle: [fractiai-arc-agi-2-dsl-v1](https://www.kaggle.com/code/prudenciomendez/fractiai-arc-agi-2-dsl-v1) (v2 Complete · wrote `submission.json`) |
 | Plain-language Notebook guide | **done** — [`docs/WHAT_IS_A_KAGGLE_NOTEBOOK.md`](docs/WHAT_IS_A_KAGGLE_NOTEBOOK.md) |
 | AGI-3 official kit setup script | **done** — `scripts/setup_agi3.sh` |
-| Live AGI-3 agent run | **done** — random agent smoke on `ls20` (score 0 expected) · [scorecard](https://arcprize.org/scorecards/dc651d43-585f-4893-bd8a-0382a2fb7bff) |
+| Live AGI-3 agent run | **done** — FractiExplore cleared **1 level** on `lp85` (8-game batch) · [scorecard](https://arcprize.org/scorecards/fd32d060-359b-4716-98b1-615b72905f76) |
 | Leaderboard submit (AGI-2) | **one click left** — API `CreateCodeSubmission` still 403; open kernel → **Submit to Competition** |
 | Paper PDF | **outline only** |
 
 ### Next up
-1. Player 1: open the kernel link → **Submit to Competition** (30s)
-2. Grow smarter AGI-3 agents beyond random
-3. Grow DSL / object priors until evaluation > 0
+1. Player 1: open the kernel link → **Submit to Competition** (API still 403)
+2. Keep raising AGI-3 levels (FractiExplore · click bias · longer budgets)
+3. Grow AGI-2 DSL until evaluation > 0
 4. Draft paper body from `paper/DRAFT_OUTLINE.md`
 
 ## Setup

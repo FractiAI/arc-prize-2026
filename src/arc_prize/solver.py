@@ -13,9 +13,13 @@ from arc_prize.grids import (
     GEOMETRIC,
     Grid,
     Transform,
+    border,
     colors_in,
     crop_to_content,
+    fill_bg,
     gravity,
+    half_tile,
+    invert_nonzero,
     majority_color,
     remap_colors,
     replace_color,
@@ -24,6 +28,7 @@ from arc_prize.grids import (
     tile_alt_flip_h,
     tile_alt_flip_v,
     tile_checker,
+    triple_tile,
     upscale,
 )
 
@@ -101,6 +106,29 @@ def _crop_programs() -> list[Program]:
     ]
 
 
+def _misc_programs(src: Grid, dst: Grid) -> list[Program]:
+    out: list[Program] = [
+        ("half_tile", half_tile),
+        ("triple_tile", triple_tile),
+        ("invert_nz", invert_nonzero),
+    ]
+    # try borders with colors present in dst
+    for c in colors_in(dst)[:4]:
+        out.append((f"border:{c}", lambda g, c=c: border(g, c)))
+    # fill bg with a dst color
+    for c in colors_in(dst)[:4]:
+        out.append((f"fill_bg:{c}", lambda g, c=c: fill_bg(g, c, 0)))
+    # same-shape identity already covered; try gravity after invert
+    for d in ("down", "up", "left", "right"):
+        out.append(
+            (
+                f"invert+gravity:{d}",
+                lambda g, d=d: gravity(invert_nonzero(g), d, 0),
+            )
+        )
+    return out
+
+
 def _single_recolor_programs(src: Grid, dst: Grid) -> list[Program]:
     """src→dst when exactly one color changes and shapes match."""
     if len(src) != len(dst) or (src and len(src[0]) != len(dst[0])):
@@ -125,6 +153,7 @@ def candidate_programs(train_pairs: list[dict[str, Any]]) -> list[Program]:
     library.extend(_crop_programs())
     library.extend(_color_bijection_programs(first_in, first_out))
     library.extend(_single_recolor_programs(first_in, first_out))
+    library.extend(_misc_programs(first_in, first_out))
 
     # geometric ∘ recolor / upscale ∘ geometric
     for gname, gfn in GEOMETRIC:
