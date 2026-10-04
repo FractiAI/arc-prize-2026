@@ -26,13 +26,13 @@ Living detail: [`PROGRESS.md`](PROGRESS.md)
 | Kaggle Notebook / Kernel | **done** — ran on Kaggle: [fractiai-arc-agi-2-dsl-v1](https://www.kaggle.com/code/prudenciomendez/fractiai-arc-agi-2-dsl-v1) (v2 Complete · wrote `submission.json`) |
 | Plain-language Notebook guide | **done** — [`docs/WHAT_IS_A_KAGGLE_NOTEBOOK.md`](docs/WHAT_IS_A_KAGGLE_NOTEBOOK.md) |
 | AGI-3 official kit setup script | **done** — `scripts/setup_agi3.sh` |
-| Live AGI-3 agent run | **blocked** — `ARC_API_KEY` not yet visible in this agent session (need key from [three.arcprize.org](https://three.arcprize.org/)) |
+| Live AGI-3 agent run | **done** — random agent smoke on `ls20` (score 0 expected) · [scorecard](https://arcprize.org/scorecards/dc651d43-585f-4893-bd8a-0382a2fb7bff) |
 | Leaderboard submit (AGI-2) | **one click left** — API `CreateCodeSubmission` still 403; open kernel → **Submit to Competition** |
 | Paper PDF | **outline only** |
 
 ### Next up
 1. Player 1: open the kernel link → **Submit to Competition** (30s)
-2. Paste `ARC_API_KEY=...` (from three.arcprize.org) so AGI-3 can run here
+2. Grow smarter AGI-3 agents beyond random
 3. Grow DSL / object priors until evaluation > 0
 4. Draft paper body from `paper/DRAFT_OUTLINE.md`
 

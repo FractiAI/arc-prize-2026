@@ -2,6 +2,17 @@
 
 Living status for Player 1. Newest first.
 
+## 2026-10-04 — ARC_API_KEY accepted; AGI-3 smoke OK
+
+### Done
+- Configured `ARC_API_KEY` in local vendor `.env` (gitignored; not committed)
+- `uv run main.py --agent=random --game=ls20` completed via three.arcprize.org
+- Scorecard: https://arcprize.org/scorecards/dc651d43-585f-4893-bd8a-0382a2fb7bff (0 score — random baseline)
+
+### Next
+- Replace random agent with FractiAI policy agent
+- Player 1 still needs one-click AGI-2 kernel Submit if not done
+
 ## 2026-10-04 — kernel ran on Kaggle; submit needs one UI click
 
 ### Done
