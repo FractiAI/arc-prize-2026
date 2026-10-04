@@ -23,15 +23,16 @@ Living detail: [`PROGRESS.md`](PROGRESS.md)
 | DSL solver v1 (tile · upscale · gravity · crop · recolor) | **done** |
 | Training exact-match | **30 / 1000 (3.0%)** ← was 1.8% |
 | Evaluation exact-match | **0 / 120 (0%)** |
-| Kaggle Notebook submit source | **done** — `notebooks/arc_agi_2_submit.py` |
+| Kaggle Notebook / Kernel | **done** — ran on Kaggle: [fractiai-arc-agi-2-dsl-v1](https://www.kaggle.com/code/prudenciomendez/fractiai-arc-agi-2-dsl-v1) (v2 Complete · wrote `submission.json`) |
+| Plain-language Notebook guide | **done** — [`docs/WHAT_IS_A_KAGGLE_NOTEBOOK.md`](docs/WHAT_IS_A_KAGGLE_NOTEBOOK.md) |
 | AGI-3 official kit setup script | **done** — `scripts/setup_agi3.sh` |
-| Live AGI-3 agent run | **blocked** — need `ARC_API_KEY` from [three.arcprize.org](https://three.arcprize.org/) |
-| Leaderboard submit (AGI-2) | **next** — upload Notebook (CLI submit returned 403) |
+| Live AGI-3 agent run | **blocked** — `ARC_API_KEY` not yet visible in this agent session (need key from [three.arcprize.org](https://three.arcprize.org/)) |
+| Leaderboard submit (AGI-2) | **one click left** — API `CreateCodeSubmission` still 403; open kernel → **Submit to Competition** |
 | Paper PDF | **outline only** |
 
 ### Next up
-1. Submit AGI-2 via Kaggle Notebook (`notebooks/README.md`)
-2. Set `ARC_API_KEY` and run `./scripts/setup_agi3.sh` + random agent smoke
+1. Player 1: open the kernel link → **Submit to Competition** (30s)
+2. Paste `ARC_API_KEY=...` (from three.arcprize.org) so AGI-3 can run here
 3. Grow DSL / object priors until evaluation > 0
 4. Draft paper body from `paper/DRAFT_OUTLINE.md`
 
