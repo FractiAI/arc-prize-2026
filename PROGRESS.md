@@ -2,6 +2,18 @@
 
 Living status for Player 1. Newest first.
 
+## 2026-10-04 — kernel ran on Kaggle; submit needs one UI click
+
+### Done
+- Pushed private kernel `prudenciomendez/fractiai-arc-agi-2-dsl-v1` (v2 **Complete**)
+- Output: `submission.json` (240 tasks) on Kaggle working dir
+- Plain-language explainer: `docs/WHAT_IS_A_KAGGLE_NOTEBOOK.md`
+
+### Blocked
+- `kaggle competitions submit -k …` → **403 CreateCodeSubmission** (limits show 1 remaining today)
+- Player 1 must click **Submit to Competition** on the kernel page while logged in
+- `ARC_API_KEY` still unset in agent env (Kaggle token ≠ ARC API key)
+
 ## 2026-10-04 — harness v1 (solver grow + notebook + AGI-3 setup)
 
 ### Done
