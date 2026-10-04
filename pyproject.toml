@@ -1,0 +1,28 @@
+[project]
+name = "arc-prize-2026"
+version = "0.1.0"
+description = "FractiAI / SynthOBS — ARC Prize 2026 (ARC-AGI-2 + Paper track)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "kaggle>=1.7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+arc-download = "arc_prize.cli:download_main"
+arc-eval = "arc_prize.cli:eval_main"
+arc-submit-build = "arc_prize.cli:build_submission_main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
